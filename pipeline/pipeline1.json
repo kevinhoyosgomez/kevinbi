@@ -19,9 +19,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "NuevosDatos",
-							"wildcardFileName": "@item()['name']",
+							"fileListPath": "archivo1/NuevosDatos/Address.parquet",
 							"enablePartitionDiscovery": false
 						}
 					},
