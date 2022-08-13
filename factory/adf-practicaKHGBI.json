@@ -1,0 +1,9 @@
+{
+	"name": "adf-practicaKHGBI",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e833e37f-6ebd-4384-b540-d89ede82edd1",
+		"tenantId": "6a70aa4b-7e07-4142-8781-7fd526babdce"
+	}
+}
