@@ -5,8 +5,20 @@
 			"referenceName": "AzureSqlDatabase1Hacia",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Tabla": {
+				"type": "string"
+			},
+			"Esquema": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": "@dataset().Esquema",
+			"table": "@dataset().Tabla"
+		}
 	}
 }
