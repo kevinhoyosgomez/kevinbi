@@ -19,7 +19,7 @@
 						"referenceName": "Parquet1Address",
 						"type": "DatasetReference",
 						"parameters": {
-							"SistemaDeArchivos": "almacenpracticaKHG",
+							"SistemaDeArchivos": "archivo1",
 							"RutaDeArchivos": "NuevosDatos"
 						}
 					},
