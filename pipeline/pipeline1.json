@@ -74,7 +74,22 @@
 										"enablePartitionDiscovery": false
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -83,6 +98,19 @@
 									"parameters": {
 										"SistemaDeArchivos": "almacenpracticakhg",
 										"RutaDeArchivos": "NuevosDatos"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AzureSqlTable1",
+									"type": "DatasetReference",
+									"parameters": {
+										"Tabla": {
+											"value": "@concat(\nreplace(item()['name'],\n'.parquet',''),\n'_NuevaTabla')",
+											"type": "Expression"
+										},
+										"Esquema": "SalesLT"
 									}
 								}
 							]
