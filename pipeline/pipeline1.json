@@ -19,7 +19,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"fileListPath": "archivo1/NuevosDatos/Address.parquet",
+							"recursive": true,
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -53,8 +53,8 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference",
 						"parameters": {
-							"Tabla": "1",
-							"Esquema": "2"
+							"Tabla": "@concat(replace(item()['name'],'.parquet',''),'_NuevaTabla')",
+							"Esquema": "SalesLT"
 						}
 					}
 				]
