@@ -28,7 +28,6 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
 						"enablePartitionDiscovery": false
 					}
 				}
@@ -71,10 +70,7 @@
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
 										"wildcardFolderPath": "NuevosDatos",
-										"wildcardFileName": {
-											"value": "@item().['name']",
-											"type": "Expression"
-										},
+										"wildcardFileName": "@Item().['name']",
 										"enablePartitionDiscovery": false
 									}
 								},
@@ -110,10 +106,7 @@
 									"referenceName": "AzureSqlTable1",
 									"type": "DatasetReference",
 									"parameters": {
-										"Tabla": {
-											"value": "@concat(\nreplace(item()['name'],\n'.parquet',''),\n'_NuevaTabla')",
-											"type": "Expression"
-										},
+										"Tabla": "@concat(replace(item()['name'],'.parquet',''),'_NuevaTabla')",
 										"Esquema": "SalesLT"
 									}
 								}
